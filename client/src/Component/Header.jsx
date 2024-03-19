@@ -20,6 +20,7 @@ const Header = () => {
           <li className=' text-xl px-4 hover:text-orange-700 transition duration-150 ease-out hover:ease-in' > <Link to="/about">About us</Link></li>
           <li className=' text-xl px-4 hover:text-orange-700 transition duration-150 ease-out hover:ease-in'><Link to="/contact">Contact Us</Link></li>
           <li className=' text-xl px-4 hover:text-orange-700 transition duration-150 ease-out hover:ease-in'><Link>Cart</Link></li>
+          <li className=' text-xl px-4 hover:text-orange-700 transition duration-150 ease-out hover:ease-in'><Link to="/Grocery">Grocey</Link></li>
           <button onClick={logout} className='text-xl bg-slate-400 p-2 rounded-md hover:bg-slate-500'>{login}</button>
         </ul>
       </div>

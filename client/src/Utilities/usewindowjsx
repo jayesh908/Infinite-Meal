@@ -1,0 +1,15 @@
+import { useEffect, useState } from 'react'
+
+
+const usewindow = () => {
+    const [wwidth, setwwidth] = useState(undefined)
+
+    useEffect(() => {
+         setwwidth(window.innerWidth)
+    }, [])
+
+
+    return wwidth
+}
+
+export default usewindow
