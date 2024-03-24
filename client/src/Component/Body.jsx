@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Restrocard, { Promotedcard } from "./Restrocard";
 import Shimmer from "./Shimmer";
-import useOnlineStatus from "../Utilities/useOnlineStatus";
-const Body = () => {
+
+import useOnlineStatus from "../Utilities/useOnlineStatus"
+const Body = ({show}) => {
   const [localstate, setlocalstate] = useState([]);
   const [fliteredrestro, setfilterrestro] = useState([])
   const [searcttext, setseachtext] = useState("");
@@ -41,15 +42,20 @@ const Body = () => {
   }
 
   const Promotedcard2 = Promotedcard(Restrocard)
-
+  
   return (
     <>
+
       {localstate.length === 0 ? (
         <Shimmer />) : (
+          
         <div className="body">
+
           <div className="flex justify-between">
+
             <div className="flex">
-              <div >
+              {
+                show &&<div>
                 <input
                   className=" m-4 p-2 border border-blue-500"
                   type="search"
@@ -60,14 +66,16 @@ const Body = () => {
 
                   }}
                   onKeyUp={() => {
-                    let filterdata = localstate.filter((res) =>
-                      res.info.name.toLowerCase().includes(searcttext.toLowerCase())
-                    );
+                    let filterdata = localstate.filter((res) =>{
+                      return res.info.name.toLowerCase().includes(searcttext.toLowerCase())
+                  });
                     setfilterrestro(filterdata);
                   }}
                 ></input>
 
               </div>
+              }
+              
               <div className=" m-4 p-2 bg-gray-600  text-white hover:bg-gray-500 rounded-md">
                 <button
                   onClick={() => {

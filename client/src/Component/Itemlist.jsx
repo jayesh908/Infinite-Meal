@@ -1,5 +1,13 @@
+import { useDispatch } from "react-redux"
 import { CDN_URL } from "../Utilities/constant"
+import { additem } from "../Utilities/CreateSlice"
 const Itemlist = ({item}) => {
+
+    const dispatch = useDispatch()
+    const handleadditem = (name)=>{
+        //dispatch an action
+        dispatch(additem(name))
+    }
     return (
         <div>
             <div>
@@ -8,6 +16,7 @@ const Itemlist = ({item}) => {
                         <div className="w-3/12">
                             <img src={CDN_URL + ite.card.info.imageId} className="w-20 h-auto">
                             </img>
+                            <button className="bg-black text-white p-2 rounded-lg" onClick={()=>{handleadditem(ite)}}>Add+</button>
                         </div>
                         <div>
                             <div className="py-2 w-9/12">

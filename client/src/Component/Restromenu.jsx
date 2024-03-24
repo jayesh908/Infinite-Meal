@@ -27,7 +27,8 @@ const Restromenu = () => {
                 <h1 className='font-bold text-3xl my-6'>{name}</h1>
                 <p className='text-2xl font-bold'>{cuisines.join(",")}</p>
                {categories.map((rescat,index)=>
-               <Rescategory showItem={index===expand && true}
+               <Rescategory
+                showItem={index===expand && true}
                 key={rescat?.card?.card?.title}
                  rescat = {rescat?.card?.card}
                 setexpand={()=>{setexpand(index)}}
